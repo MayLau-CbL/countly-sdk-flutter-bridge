@@ -6,3 +6,32 @@
 
 build/
 .orig
+
+example/.flutter-plugins-dependencies
+
+pubspec.lock
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Visual Studio Code related
+.vscode/
+android/.classpath
+android/.project
+android/.settings
+android/app/.classpath
+
+example/android/.classpath
+example/android/.project
+example/android/.settings
+example/android/app/.classpath
+example/android/app/.project
+example/android/app/.settings
+
+
+example/ios/Podfile.lock
+example/android/app/debug
+example/lib/backup.dart
