@@ -91,6 +91,8 @@ public class CountlyFlutterPlugin implements MethodCallHandler {
               this.config.setContext(context);
               this.config.setServerURL(serverUrl);
               this.config.setAppKey(appKey);
+              //may: for fixing the for-llop the null list on Countly sdk
+              this.config.setConsentEnabled(new String[]{});
               if (args.length() == 2) {
                   // Countly.sharedInstance().init(context, serverUrl, appKey, null, DeviceId.Type.OPEN_UDID);
                  this.config.setIdMode(DeviceId.Type.OPEN_UDID);
@@ -111,7 +113,8 @@ public class CountlyFlutterPlugin implements MethodCallHandler {
               }
               Countly.sharedInstance().init(this.config);
               Countly.sharedInstance().onStart(activity);
-              result.success("initialized!");
+              //may: sync IOS success msg
+              result.success("initialized.");
           } else if ("changeDeviceId".equals(call.method)) {
               String newDeviceID = args.getString(0);
               String onServerString = args.getString(1);
